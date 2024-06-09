@@ -17,6 +17,11 @@ public class AppDbContext : DbContext
         modelBuilder.Entity<SailboatReservation>()
             .HasKey(sr => new { sr.IdSailboat, sr.IdReservation });
     }
+    
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        => optionsBuilder.UseSqlServer("Server=db-mssql16.pjwstk.edu.pl;Database=s10838;Integrated Security=True;TrustServerCertificate=True");
+
+    
     // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     // {
     //     optionsBuilder.UseLazyLoadingProxies();
