@@ -12,7 +12,11 @@ public class AppDbContext : DbContext
     public DbSet<Reservation> Reservations { get; set; }
     public DbSet<Client> Clients { get; set; }
     public DbSet<ClientCategory> ClientCategories { get; set; }
-
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<SailboatReservation>()
+            .HasKey(sr => new { sr.IdSailboat, sr.IdReservation });
+    }
     // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     // {
     //     optionsBuilder.UseLazyLoadingProxies();
