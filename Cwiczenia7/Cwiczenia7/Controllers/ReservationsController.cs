@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Cwiczenia7.Context;
 using Cwiczenia7.Models;
+using Cwiczenia7.DTO;
 
 namespace Cwiczenia7.Controllers
 {
@@ -93,12 +94,5 @@ namespace Cwiczenia7.Controllers
         }
     }
 
-    public class ReservationRequest
-    {
-        public int IdClient { get; set; }
-        public DateTime DateFrom { get; set; }
-        public DateTime DateTo { get; set; }
-        public int IdBoatStandard { get; set; }
-        public int NumOfBoats { get; set; }
-    }
+   
 }
